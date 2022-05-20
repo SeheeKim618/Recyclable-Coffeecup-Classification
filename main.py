@@ -9,23 +9,14 @@ from torch import optim
 from torchvision.datasets import ImageFolder
 import time
 import warnings
-
+from dataset.AttrDataset import get_transform
 
 warnings.filterwarnings("ignore")
 
 #transform image function define
-
-#train set
+'''
+#train-valid set
 transform_train = transforms.Compose([transforms.ToTensor(),
-                                      transforms.Resize((224, 224)),
-                                      transforms.RandomHorizontalFlip(p=1),
-                                      transforms.RandomVerticalFlip(),
-                                      transforms.RandomRotation(90),
-                                      transforms.ColorJitter(brightness=(0.2,3)),
-                                      transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
-
-#valid set
-transform_valid = transforms.Compose([transforms.ToTensor(),
                                       transforms.Resize((224, 224)),
                                       transforms.RandomHorizontalFlip(p=1),
                                       transforms.RandomVerticalFlip(),
@@ -37,36 +28,49 @@ transform_valid = transforms.Compose([transforms.ToTensor(),
 transform_test = transforms.Compose([transforms.ToTensor(),
                                     transforms.Resize((224, 224)),
                                     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+'''
+train_tsfm, test_tsfm = get_transform()
 
+data_path = "./data/cafecup/"
 
+dataset = ImageFolder(data_path)
+
+train_set, test_set = torch.utils.data.random_split(dataset, [750, 150])
+train_set, val_set = torch.utils.data.random_split(train_set, [700, 50])
+
+train_set = train_tsfm(train_set)
+val_set = train_tsfm(val_set)
+test_set = test_tsfm(test_set)
+
+'''
 #get ready for data
-train = ImageFolder("/home/jjunhee98/model1_plastic_ver2/train", transform_train)
-valid = ImageFolder("/home/jjunhee98/model1_plastic_ver2/validation", transform_valid)
-test = ImageFolder("/home/jjunhee98/resnet_project2/test",transform_test)
-
+train_set = ImageFolder("./data/train", transform_train)
+valid_set = ImageFolder("./data/valid", transform_train)
+test_set = ImageFolder("./data/test", transform_test)
+'''
 #class
 class_names = train.classes
 
 #load data
-train_data_gen = torch.utils.data.DataLoader(train, shuffle=True, batch_size=64, num_workers=3)
-valid_data_gen = torch.utils.data.DataLoader(valid, shuffle=True, batch_size=32, num_workers=3)
-test_data_gen = torch.utils.data.DataLoader(test, shuffle=True, batch_size=1, num_workers=3)
+train_loader = torch.utils.data.DataLoader(train_set, shuffle=True, batch_size=32, num_workers=3)
+val_loader = torch.utils.data.DataLoader(val_set, shuffle=True, batch_size=1, num_workers=3)
+test_loader = torch.utils.data.DataLoader(test_set, shuffle=True, batch_size=1, num_workers=3)
 
 dataloaders = {'train':train_data_gen, 'valid':valid_data_gen, 'test': test_data_gen}
 dataset_sizes = {'train': len(train_data_gen.dataset),'valid': len(valid_data_gen.dataset), 'test':len(test_data_gen.dataset)}
 
 #print info
-print("sizeof_train_dataset : ",len(train))
-print("sizeof_validation_dataset : ",len(valid))
-print("sizeof_test_dataset : ",len(test))
-print("class_names : ",class_names)
+print("sizeof_train_dataset : ", len(train_set))
+print("sizeof_validation_dataset : ", len(valid_set))
+print("sizeof_test_dataset : ", len(test_set))
+print("class_names : ", class_names)
 
 #model
-net = models.resnet34(pretrained=True)
+model = models.resnet18(pretrained=True)
 
 #modify fc part in resnet
-num_ftrs = net.fc.in_features
-net.fc = nn.Linear(num_ftrs, len(class_names))
+num_ftrs = model.fc.in_features
+model.fc = nn.Linear(num_ftrs, len(class_names))
 
 #model setting
 criterion = nn.CrossEntropyLoss()
@@ -75,7 +79,7 @@ optimizer = optim.SGD(net.parameters(), lr = 0.001, momentum=0.9, weight_decay=1
 LR_scheduler = lr_scheduler.StepLR(optimizer,step_size=3, gamma=0.1)
 
 #model checkpoint
-checkpoint_path = '/home/jjunhee98/model1_plastic_ver2/trained_model/checkpoint1'
+checkpoint_path = './exp_result/checkpoint1'
 file_name = 'checkpoint1test_lr_001_SGD_class4_freeze34-2_new_ver2.pt'
 
 #model load

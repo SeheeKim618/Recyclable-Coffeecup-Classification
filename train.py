@@ -22,7 +22,6 @@ warnings.filterwarnings("ignore")
 train_tsfm, test_tsfm = get_transform()
 
 data_path = os.path.join("./data", f"{args.dataset}")
-#data_path = "./data/cafecup/"
 
 #get ready for data
 train_set = ImageFolder("./data/cafecup/train/", train_tsfm)

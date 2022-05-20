@@ -131,7 +131,7 @@ def train(model, criterion, optimizer, scheduler, epochs):
                     'optimizer': optimizer.state_dict(),
                     'schedular': scheduler.state_dict()
                 }
-                save_model(args.model_ckpt, state, args.ckpt_name)
+                save_model(args.ckpt_path, state, args.ckpt_name)
 
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(

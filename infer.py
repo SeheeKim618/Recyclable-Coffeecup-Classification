@@ -21,12 +21,12 @@ warnings.filterwarnings("ignore")
 
 train_tsfm, test_tsfm = get_transform()
 
-data_path = "/home/jjunhee98/바탕화면/ksh/data/cafecup/"
+data_path = "./data/cafecup/"
 
 #get ready for data
-train_set = ImageFolder("/home/jjunhee98/바탕화면/ksh/data/cafecup/train/", train_tsfm)
-val_set = ImageFolder("/home/jjunhee98/바탕화면/ksh/data/cafecup/valid/", train_tsfm)
-test_set = ImageFolder("/home/jjunhee98/바탕화면/ksh/data/cafecup/test/", test_tsfm)
+train_set = ImageFolder("./data/cafecup/train/", train_tsfm)
+val_set = ImageFolder("./data/cafecup/valid/", train_tsfm)
+test_set = ImageFolder("./data/cafecup/test/", test_tsfm)
 
 #load data
 train_loader = torch.utils.data.DataLoader(train_set, shuffle=True, batch_size=8, num_workers=3)
@@ -66,19 +66,16 @@ def test(model, criterion, optimizer):
     running_loss = 0.0
     running_corrects = 0
 
-    # 데이터 반
     for data in dataloaders['test']:
-        # 입력 데이터 가져오기
+
         inputs, labels = data
 
-        # 데이터를 Vaariable로 만듦
         if torch.cuda.is_available():
             inputs = Variable(inputs.cuda())
             labels = Variable(labels.cuda())
         else:
             inputs, labels = Variable(inputs), Variable(labels)
 
-        # 파라미터 기울기 초기화
         optimizer.zero_grad()
 
         # forward
@@ -86,7 +83,6 @@ def test(model, criterion, optimizer):
         _, preds = torch.max(outputs.data, 1)
         loss = criterion(outputs, labels)
 
-        # 통계
         running_loss += loss.data
         running_corrects += torch.sum(preds == labels.data)
 
@@ -96,5 +92,6 @@ def test(model, criterion, optimizer):
     print('{} |\t Loss: {:.4f}\t Accuracy: {:.4f}'.format(
         'Test', test_loss, test_acc))
 
+    
 if __name__ == "__main__":
     model_ft = test(model, criterion, optimizer)

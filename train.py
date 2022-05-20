@@ -53,7 +53,7 @@ model.fc = nn.Linear(num_ftrs, 4)
 #model setting
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
-epoch = args.train_epoch
+epochs = args.train_epoch
 LR_scheduler = lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.1)
 
 '''
@@ -143,4 +143,4 @@ def train(model, criterion, optimizer, scheduler, epochs):
 
 
 if __name__ == "__main__":
-    model_ft = train(model, criterion, optimizer, LR_scheduler, epoch)
+    model_ft = train(model, criterion, optimizer, LR_scheduler, epochs)

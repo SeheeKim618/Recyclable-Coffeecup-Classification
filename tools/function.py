@@ -9,5 +9,5 @@ def save_model(model_path, state, file_name):
 
 def get_reload_weight(model_path, model):
     checkpoint = torch.load(model_path)
-    model.load_state_dict(checkpoint['state_dicts'])
+    model.load_state_dict(checkpoint['model'])
     return model

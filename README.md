@@ -1,1 +1,1 @@
-# Disposable-cup-classification
+# Recyclable-cafecup-classification

@@ -18,7 +18,6 @@ train_tsfm, test_tsfm = get_transform()
 
 data_path = "./data/cafecup/"
 
-
 #get ready for data
 train_set = ImageFolder("./data/cafecup/train/", train_tsfm)
 val_set = ImageFolder("./data/cafecup/valid/", train_tsfm)

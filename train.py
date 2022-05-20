@@ -137,10 +137,8 @@ def train(model, criterion, optimizer, scheduler, epochs):
         time_elapsed // 60, time_elapsed % 60))
     print('Best Valid Accuracy: {:4f}'.format(best_acc))
 
-    # 최적의 모델 가중치 로딩
     model.load_state_dict(best_model_wts)
     return model
-
 
 if __name__ == "__main__":
     model_ft = train(model, criterion, optimizer, LR_scheduler, epochs)

@@ -11,8 +11,8 @@ def argument_parser():
     parser.add_argument("ckpt_name", type=str, default="None")
     parser.add_argument("--debug", action='store_false')
     parser.add_argument("--train_batchsize", type=int, default=8) # 8
-    parser.add_argument("--valid_batchsize", type=int, default=1) # 8
-    parser.add_argument("--test_batchsize", type=int, default=1) # 8
+    parser.add_argument("--valid_batchsize", type=int, default=1) # 1
+    parser.add_argument("--test_batchsize", type=int, default=1) # 1
     parser.add_argument("--train_epoch", type=int, default=50) # 50
     parser.add_argument("--height", type=int, default=256)
     parser.add_argument("--width", type=int, default=192)

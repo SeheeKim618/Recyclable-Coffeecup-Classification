@@ -35,9 +35,7 @@ dataset_sizes = {'train': len(train_loader.dataset),'valid': len(val_loader.data
 class_names = train_set.classes
 
 #print info
-print("num_train_dataset : ", len(train_set))
-print("num_valid_dataset : ", len(val_set))
-print("num_test_dataset : ", len(test_set))
+print("num_train_dataset: ", len(train_set), "num_valid_dataset: ", len(val_set), "num_test_dataset: ", len(test_set))
 print("classes: ", class_names)
 
 #model

@@ -2,7 +2,7 @@
 
 ## Quick Start
 ### Data preparation
-In our experiments, we use custom dataset. The datasets should be put in '''data''', respecting the following tree directory:
+In our experiments, we use custom dataset. The datasets should be put in data, respecting the following tree directory:
 ```
 ${ROOT}
 |-- data

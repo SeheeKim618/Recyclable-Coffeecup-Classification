@@ -1,6 +1,7 @@
 # Recyclable-cafecup-classification
 
-## Data preparation
+## Quick Start
+### Data preparation
 ${POSE_ROOT}
 |-- data
 `-- |-- coco

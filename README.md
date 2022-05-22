@@ -2,20 +2,43 @@
 
 ## Quick Start
 ### Data preparation
-${POSE_ROOT}
+```
+${ROOT}
 |-- data
-`-- |-- coco
-    `-- |-- annotations
-        |   |-- person_keypoints_train2017.json
-        |   `-- person_keypoints_val2017.json
-        `-- images
-            |-- train2017
-            |   |-- 000000000009.jpg
-            |   |-- 000000000025.jpg
-            |   |-- 000000000030.jpg
-            |   |-- ... 
-            `-- val2017
-                |-- 000000000139.jpg
-                |-- 000000000285.jpg
-                |-- 000000000632.jpg
+`-- |-- cafecup
+    `-- |-- train
+        |   |-- plastic
+                |-- 1.jpg
+                |-- 2.jpg
                 |-- ... 
+        |   |-- paper
+                |-- 3.jpg
+                |-- 4.jpg
+                |-- ... 
+        |   |-- paper_in
+                |-- 5.jpg
+                |-- 6.jpg
+                |-- ... 
+        |   |-- waste
+                |-- 7.jpg
+                |-- 8.jpg
+                |-- ... 
+        `-- valid
+            |-- plastic
+                |-- ...
+            |-- paper
+                |-- ...
+            |-- paper_in
+                |-- ...
+            |-- waste
+                |-- ...
+        `-- test
+            |-- plastic
+                |-- ...
+            |-- paper
+                |-- ...
+            |-- paper_in
+                |-- ...
+            |-- waste
+                |-- ...
+```

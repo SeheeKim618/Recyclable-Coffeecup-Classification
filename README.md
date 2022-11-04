@@ -1,7 +1,7 @@
 # Recyclable-coffeecup-classification
 
 ### Model flow
-![conv_image_80](https://user-images.githubusercontent.com/76892271/200020783-eac8e8df-3123-47a8-888a-dbb91de5ef03.png)
+![conv_image_80](https://user-images.githubusercontent.com/76892271/200021532-f5956ae0-0060-48be-a561-a8222cd02dee.png)
 
 
 ## Quick Start

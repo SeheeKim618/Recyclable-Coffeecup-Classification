@@ -34,7 +34,7 @@ ${ROOT}
             |-- paper_in
             |-- waste
 ```
-This is our dataset examples:
+This is the dataset examples:
 ![conv_image_80](https://user-images.githubusercontent.com/76892271/200028376-0fc42439-e1c8-496e-a7ce-7f50916d6f7b.png)
 
 ### Training and Testing

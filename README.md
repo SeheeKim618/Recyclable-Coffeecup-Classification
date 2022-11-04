@@ -7,6 +7,7 @@ We created an automated collecting system that detects recyclable coffee cups in
 
 ### Model flow
 We used the pre-trained ResNet18 as the backbone.
+ <br/>
 ![conv_image_80](https://user-images.githubusercontent.com/76892271/200021532-f5956ae0-0060-48be-a561-a8222cd02dee.png)
 
 

@@ -1,6 +1,6 @@
 # Recyclable-coffeecup-classification
 This recyclable coffee cup classification code was used at the KB Kookmin Bank Software Competition. 
-## Project
+## Project Description
 ### Product
 ![conv_image_80](https://user-images.githubusercontent.com/76892271/200024668-6f8792c0-398d-4854-a30a-3077bcb037ca.png)
 

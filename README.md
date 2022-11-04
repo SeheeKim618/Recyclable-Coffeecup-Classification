@@ -39,7 +39,7 @@ This is our dataset examples:
 
 ### Training and Testing
 To train and infer, we provide two scripts with suggestive names.  
-For training, you can train a model by executing the train script::
+For training, you can train a model by executing the train script:
 ```
 bash train.sh
 ```

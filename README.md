@@ -6,7 +6,7 @@ In our experiments, we use custom dataset. The datasets should be put in data, r
 ```
 ${ROOT}
 |-- data
-`-- |-- cafecup
+`-- |-- coffeecup
     `-- |-- train
         |   |-- plastic
         |   |-- paper

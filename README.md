@@ -38,13 +38,14 @@ This is our dataset examples:
 ![conv_image_80](https://user-images.githubusercontent.com/76892271/200028376-0fc42439-e1c8-496e-a7ce-7f50916d6f7b.png)
 
 ### Training and Testing
-For training:
+To train and infer, we provide two scripts with suggestive names.  
+For training, you can train a model by executing the train script::
 ```
-python train.sh
+bash train.sh
 ```
-For testing:
+For inference:
 ```
-python infer.sh
+bash infer.sh
 ```
 ## References
  * ResNet [[paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)]

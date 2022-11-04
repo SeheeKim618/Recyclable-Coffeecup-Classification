@@ -1,7 +1,7 @@
 # Recyclable-coffeecup-classification
 ## Project
 ### Product
-![conv_image_80](https://user-images.githubusercontent.com/76892271/200024288-fac40d25-fcfb-4f55-ad34-8e2951b3886e.png)
+![conv_image_80](https://user-images.githubusercontent.com/76892271/200024668-6f8792c0-398d-4854-a30a-3077bcb037ca.png)
 
 ### Model flow
 ![conv_image_80](https://user-images.githubusercontent.com/76892271/200021532-f5956ae0-0060-48be-a561-a8222cd02dee.png)

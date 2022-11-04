@@ -21,12 +21,12 @@ warnings.filterwarnings("ignore")
 
 train_tsfm, test_tsfm = get_transform()
 
-data_path = "/home/jjunhee98/바탕화면/ksh/data/cafecup/"
+data_path = "/home/seheekim/Desktop/kb/data/coffeecup/"
 
 #get ready for data
-train_set = ImageFolder("/home/jjunhee98/바탕화면/ksh/data/cafecup/train/", train_tsfm)
-val_set = ImageFolder("/home/jjunhee98/바탕화면/ksh/data/cafecup/valid/", train_tsfm)
-test_set = ImageFolder("/home/jjunhee98/바탕화면/ksh/data/cafecup/test/", test_tsfm)
+train_set = ImageFolder("/home/seheekim/Desktop/kb/data/coffeecup/train/", train_tsfm)
+val_set = ImageFolder("/home/seheekim/Desktop/kb/data/coffeecup/valid/", train_tsfm)
+test_set = ImageFolder("/home/seheekim/Desktop/kb/data/coffeecup/test/", test_tsfm)
 
 #load data
 train_loader = torch.utils.data.DataLoader(train_set, shuffle=True, batch_size=8, num_workers=3)

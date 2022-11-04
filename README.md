@@ -38,8 +38,7 @@ This is our dataset examples:
 ![conv_image_80](https://user-images.githubusercontent.com/76892271/200028376-0fc42439-e1c8-496e-a7ce-7f50916d6f7b.png)
 
 ### Training and Testing
-To train and infer, we provide two scripts with suggestive names.  
-For training, you can train a model by executing the train script:
+To train and infer, we provide two scripts with suggestive names. For training, you can train a model by executing the train script:
 ```
 bash train.sh
 ```

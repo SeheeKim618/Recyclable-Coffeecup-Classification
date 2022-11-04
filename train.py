@@ -24,9 +24,9 @@ train_tsfm, test_tsfm = get_transform()
 data_path = os.path.join("./data", f"{args.dataset}")
 
 #get ready for data
-train_set = ImageFolder("./data/cafecup/train/", train_tsfm)
-val_set = ImageFolder("./data/cafecup/valid/", train_tsfm)
-test_set = ImageFolder("./data/cafecup/test/", test_tsfm)
+train_set = ImageFolder("./data/coffeecup/train/", train_tsfm)
+val_set = ImageFolder("./data/coffeecup/valid/", train_tsfm)
+test_set = ImageFolder("./data/coffeecup/test/", test_tsfm)
 
 #load data
 train_loader = torch.utils.data.DataLoader(train_set, shuffle=True, batch_size=args.train_batchsize, num_workers=3)
